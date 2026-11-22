@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" style="color-scheme: light;"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hosam Maher — MEP Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f8;--surface:#fff;--text:#14212e;--muted:#5d6b7a;--line:#dde3ea;--navy:#0b2a45;--navy2:#103a5e;--accent:#f2a900;--link:#0b5a9c;--on:#fff;--onm:#b8c6d4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1119;--surface:#111b27;--text:#e8eef5;--muted:#93a3b4;--line:#223142;--navy:#071a2c;--navy2:#0c2740;--link:#7cc0ff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1119;--surface:#111b27;--text:#e8eef5;--muted:#93a3b4;--line:#223142;--navy:#071a2c;--navy2:#0c2740;--link:#7cc0ff;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--navy)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+a{color:var(--link)}
+.top{background:var(--navy2);color:var(--onm);font-size:.85rem}
+.top .wrap{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.top a{color:var(--onm);text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--on)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--on);text-decoration:none;white-space:nowrap}
+.logo b{background:var(--accent);color:#1a1400;border-radius:8px;padding:2px 9px}
+nav{display:flex;gap:22px;align-items:center;overflow-x:auto}
+nav a{color:var(--onm);text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;padding:11px 24px;border-radius:6px;border:2px solid var(--accent);background:var(--accent);color:#1a1400;font:inherit;font-weight:800;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--on)}
+.btn.sm{padding:6px 14px;font-size:.85rem}
+.btn.navy{background:var(--navy);border-color:var(--navy);color:#fff}
+.hero{background:linear-gradient(120deg,rgba(11,42,69,.97),rgba(16,58,94,.93)),repeating-linear-gradient(90deg,transparent 0 59px,rgba(255,255,255,.05) 59px 60px);background-color:var(--navy);color:var(--on);padding:96px 0 110px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset-inline-end:-120px;top:-60px;width:380px;height:130%;background:var(--accent);opacity:.12;transform:skewX(-18deg)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+.hero h1{font-size:clamp(2.3rem,7vw,4.4rem);line-height:1.08;margin:12px 0 18px;font-weight:800;max-width:14ch}
+.hero p{max-width:62ch;color:var(--onm);font-size:1.08rem;margin:0 0 30px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:72px 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 8px;font-weight:800;line-height:1.2}
+.kick{color:var(--muted);margin:0 0 34px;max-width:60ch}
+h2::after{content:"";display:block;width:54px;height:4px;background:var(--accent);margin-top:12px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.sv{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);padding:26px 22px;border-radius:4px}
+.sv i{font-style:normal;font-weight:800;font-size:2rem;color:var(--line)}
+.sv h3{margin:6px 0 8px;font-size:1.1rem}.sv p{margin:0;color:var(--muted)}
+.stats{background:var(--navy2);color:var(--on);padding:46px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;text-align:center}
+.stats b{display:block;font-size:3rem;color:var(--accent);font-weight:800;line-height:1.1}
+.stats span{color:var(--onm)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.pimg{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;cursor:pointer}
+.pimg.ph{cursor:default;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:2.6rem;font-weight:800}
+.count{position:absolute;inset-inline-end:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;border-radius:999px;padding:2px 12px;font-size:.8rem}
+.cb{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cb h3{margin:0;font-size:1.1rem}.cb p{margin:0;color:var(--muted);flex:1;font-size:.95rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 14px;font-size:.85rem;font-weight:600}
+.acts2{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.mini{cursor:pointer;color:var(--link);font-weight:600;font-size:.85rem}
+.del{background:none;border:0;color:var(--muted);cursor:pointer;font:inherit;font-size:.85rem;padding:0}
+.del:hover{color:#dc2626}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px}
+h3.sub{margin:30px 0 14px;font-size:1.15rem}
+.tl{border-inline-start:2px solid var(--line);padding-inline-start:26px}
+.tli{position:relative;margin-bottom:28px}
+.tli::before{content:"";position:absolute;inset-inline-start:-34px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tli .meta{color:var(--link);font-weight:800;font-size:.85rem}
+.tli h3{margin:2px 0 0;font-size:1.1rem}.tli .org{color:var(--muted);font-weight:600}
+.tli ul{margin:8px 0 0;padding-inline-start:20px}.tli li{margin:3px 0}
+.tli p{margin:6px 0 0;color:var(--muted)}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.contact{background:var(--accent);color:#1a1400;text-align:center}
+.contact h2::after{margin-inline:auto;background:#1a1400}
+.contact .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+footer{background:var(--navy);color:var(--onm);padding:44px 0 30px}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer h4{color:var(--on);margin:0 0 10px}footer a{color:var(--onm);display:block;text-decoration:none;margin:3px 0}
+footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:.85rem}
+.empty{color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+.box{background:var(--surface);color:var(--text);border-radius:10px;padding:22px;width:100%;max-width:440px;display:flex;flex-direction:column;gap:10px}
+.box h3{margin:0}
+.box input,.box textarea{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:9px 12px;width:100%}
+.row{display:flex;gap:10px;justify-content:flex-end}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:60;display:flex;align-items:center;justify-content:center;padding:50px 56px}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lightbox .x,.lightbox .nv{position:absolute;background:none;border:0;color:#fff;font-size:2.2rem;cursor:pointer;padding:10px}
+.lightbox .x{top:6px;inset-inline-end:10px;font-size:1.6rem}
+.lightbox .pv{inset-inline-start:4px}.lightbox .nx{inset-inline-end:4px}
+.lightbox .cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#ddd;font-size:.9rem}
+.lightbox .del{color:#fca5a5}
+.hg{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.pf{position:relative;justify-self:center;width:min(340px,80vw);animation:up 1s .3s both}
+.pimg2{aspect-ratio:4/5;border-radius:18px;background-size:cover;background-position:center;border:4px solid var(--accent);box-shadow:16px 16px 0 rgba(242,169,0,.28)}
+.ph3{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy2),var(--navy));color:var(--accent);font-size:5rem;font-weight:800}
+.pbtn{position:absolute;bottom:14px;inset-inline-start:14px;cursor:pointer}
+@media (max-width:820px){.hg{grid-template-columns:1fr}.pf{order:-1;width:min(240px,70vw)}}
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.big{max-width:720px;max-height:88vh;overflow:auto}
+.box label.f{font-weight:600;font-size:.85rem;color:var(--muted)}
+.box textarea{resize:vertical}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes drift{from{background-position:0 0,0 0}to{background-position:0 0,60px 0}}
+@keyframes float{0%,100%{transform:skewX(-18deg) translateY(0)}50%{transform:skewX(-18deg) translateY(28px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,169,0,.6)}100%{box-shadow:0 0 0 14px rgba(242,169,0,0)}}
+.hero{animation:drift 8s linear infinite}
+.hero::after{animation:float 7s ease-in-out infinite}
+.hero .eyebrow,.hero h1,.hero p,.hero .acts{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.15s}.hero p{animation-delay:.3s}.hero .acts{animation-delay:.45s}
+#rot{display:inline-block;color:#fff;transition:opacity .35s}
+.tli::before{animation:pulse 2.4s infinite}
+#prog{position:absolute;top:0;inset-inline-start:0;height:3px;background:var(--accent);width:0}
+header{transition:box-shadow .3s}header.sc{box-shadow:0 6px 24px rgba(0,0,0,.28)}
+header .wrap{transition:height .3s}header.sc .wrap{height:54px}
+nav a:not(.btn){position:relative}nav a:not(.btn)::after{content:"";position:absolute;inset-inline:0;bottom:-6px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s}nav a:not(.btn):hover::after{transform:scaleX(1)}
+.btn{transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.card{transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.pimg{transition:transform .6s}.card:hover .pimg{transform:scale(1.06)}
+.sv{transition:transform .3s,box-shadow .3s}.sv:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.14)}
+.sv i{transition:color .3s}.sv:hover i{color:var(--accent)}
+.chip{transition:background .2s,transform .2s}.chip:hover{background:var(--accent);color:#1a1400;transform:translateY(-2px)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease var(--d,0ms),transform .7s ease var(--d,0ms)}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>artifact-sync,artifact-local{display:contents}</style></head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="default-data.js"></script>
+<script type="module" src="load-site.js"></script>
+<div id="app"></div>
+<script>
+var DATA=JSON.parse(JSON.stringify(window.DEFAULT_DATA)),isOwner=false,PH={};function ph(i){return PH[i]||''}
+function $(s){return document.querySelector(s)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function okId(i){return /^[A-Za-z0-9]{10,40}$/.test(i)}
+function imgs(p){return (p.images||[]).filter(okId)}
+function lk(t){return DATA.links.filter(function(x){return x.url.indexOf(t)===0})[0]||{label:'',url:'#'}}
+function chips(l){return '<div class="chips">'+(l||[]).map(function(s){return '<span class="chip">'+esc(s)+'</span>'}).join('')+'</div>'}
+function tl(list){return '<div class="tl">'+list.map(function(x){return '<div class="tli"><div class="meta">'+esc(x.period)+'</div><h3>'+esc(x.role)+'</h3><div class="org">'+esc(x.org)+'</div>'+(x.desc?'<p>'+esc(x.desc)+'</p>':'')+(x.points&&x.points.length?'<ul>'+x.points.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div>'}
+function card(p,i){
+  var im=imgs(p);
+  var cover=im.length?'<div class="pimg" data-open="'+i+'" style="background-image:url(\''+ph(im[0])+'\')">'+(im.length>1?'<span class="count">'+im.length+' photos</span>':'')+'</div>':'<div class="pimg ph">'+esc(p.title.charAt(0))+'</div>';
+  return '<div class="card">'+cover+'<div class="cb">'+chips(p.tags)+'<h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p>'
+    +(isOwner?'<div class="acts2"><label class="mini">＋ Photos<input type="file" accept="image/*" multiple hidden data-up="'+i+'"></label><button class="del" data-edit="'+i+'">Edit</button><button class="del" data-del="'+i+'">Delete project</button></div>':'')+'</div></div>';
+}
+function render(){
+  var d=DATA,mail=lk('mailto:'),tel=lk('tel:'),ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join('');
+  var links=d.links.map(function(l){return '<a class="btn ghost" href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('');
+  var ph=d.projects.reduce(function(n,p){var m=/(\d+)\s*beds/i.exec(p.desc);return n+(m?+m[1]:0)},0);
+  $('#app').innerHTML=
+   '<div class="top"><div class="wrap"><span>'+esc(d.title)+'</span><span><a href="'+esc(mail.url)+'">'+esc(mail.label)+'</a> &nbsp;·&nbsp; <a href="'+esc(tel.url)+'">'+esc(tel.label)+'</a></span></div></div>'
+  +'<header><div id="prog"></div><div class="wrap"><a class="logo" href="#home"><b>'+esc(ini)+'</b> '+esc(d.name.split(' ').slice(0,2).join(' '))+'</a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="btn sm" href="#contact">Contact</a></nav></div></header>'
+  +'<div class="hero" id="home"><div class="wrap hg"><div class="ht"><div class="eyebrow">MEP Engineer · <span id="rot">Electrical Power</span></div><h1>'+esc(d.name)+'</h1><p>'+esc(d.bio)+'</p><div class="acts"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a><button class="btn ghost" id="dlcv">⬇ Download CV</button></div></div>'+photoBlock(d)+'</div></div>'
+  +'<section id="about"><div class="wrap"><h2>What I do</h2><p class="kick">Core areas of my work across healthcare, laboratory and governmental projects.</p><div class="sgrid">'
+  +d.services.map(function(s,i){return '<div class="sv"><i>0'+(i+1)+'</i><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join('')+'</div></div></section>'
+  +'<div class="stats"><div class="wrap"><div><b data-n="8" data-s="+">8+</b><span>Years of experience</span></div><div><b data-n="'+d.projects.length+'">'+d.projects.length+'</b><span>Major projects</span></div>'+(ph?'<div><b data-n="'+ph+'">'+ph+'</b><span>Hospital beds across projects</span></div>':'')+'</div></div>'
+  +'<section id="projects"><div class="wrap"><h2>Major Projects</h2><p class="kick">Selected work with Massoud Consulting Group (MCG).</p>'
+  +(isOwner?'<p><button class="btn navy" id="add">＋ Add project</button></p>':'')
+  +(d.projects.length?'<div class="grid">'+d.projects.map(card).join('')+'</div>':'<p class="empty">No projects yet.</p>')+'</div></section>'
+  +'<section id="experience" class="alt"><div class="wrap"><h2>Experience</h2><p class="kick">Career path so far.</p>'+tl(d.experience)+'</div></section>'
+  +'<section id="skills"><div class="wrap two"><div><h2>Education</h2><p class="kick"></p>'+tl(d.education)+'<h3 class="sub">Certifications</h3>'+chips(d.certs)+'<h3 class="sub">Languages</h3>'+chips(d.languages)+'<h3 class="sub">Additional Information</h3>'+chips(d.info)+'</div>'
+  +'<div><h2>Technical Skills</h2><p class="kick"></p>'+chips(d.skills)+'</div></div></section>'
+  +'<section class="contact" id="contact"><div class="wrap"><h2>Let’s work together</h2><p>Reach out about a project or an opportunity.</p><div class="acts">'+d.links.map(function(l){return '<a class="btn navy" href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div></div></section>'
+  +(isOwner?'<button class="btn fab" id="edit">✎ Edit content</button>':'')+'<footer><div class="wrap"><div><h4>'+esc(d.name)+'</h4><div>'+esc(d.title)+'</div></div><div><h4>Contact</h4>'+d.links.map(function(l){return '<a href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div><div><h4>Links</h4><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a></div><div class="cp">© '+new Date().getFullYear()+' '+esc(d.name)+'</div></div></footer>';
+  var a=$('#add'); if(a) a.onclick=openModal; initAnim();
+  var ed=$('#edit'); if(ed) ed.onclick=openEdit;
+  var cv=$('#dlcv'); if(cv) cv.onclick=dlCV;
+  var pu=$('#pup'); if(pu) pu.onchange=async function(){var ids=await upFiles(pu.files); if(ids&&ids[0]){DATA.photo=ids[0];save()}};
+  document.querySelectorAll('[data-edit]').forEach(function(b){b.onclick=function(){openModal(+b.getAttribute('data-edit'))}});
+  document.querySelectorAll('[data-open]').forEach(function(e){e.onclick=function(){lb(+e.getAttribute('data-open'),0)}});
+  document.querySelectorAll('[data-del]').forEach(function(b){b.onclick=function(){
+    if(!confirm('Delete this project?')) return;
+    DATA.projects.splice(+b.getAttribute('data-del'),1); save()}});
+  document.querySelectorAll('[data-up]').forEach(function(f){f.onchange=async function(){
+    var ids=await upFiles(f.files); if(!ids||!ids.length) return;
+    var p=DATA.projects[+f.getAttribute('data-up')]; p.images=(p.images||[]).concat(ids); save()}});
+}
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,rotT,io;
+function count(b){var n=+b.getAttribute('data-n'),s=b.getAttribute('data-s')||'',t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1400),v=Math.round(n*(1-Math.pow(1-p,3)));b.textContent=v+s;if(p<1)requestAnimationFrame(f)})(t0)}
+function initAnim(){
+  clearInterval(rotT); if(io) io.disconnect();
+  if(rm||!('IntersectionObserver' in window)) return;
+  var els=document.querySelectorAll('h2,.kick,.sv,.card,.tli,.stats .wrap>div,#skills .chips,.sub,.contact .acts,footer .wrap>div');
+  els.forEach(function(e,i){e.classList.add('rv');e.style.setProperty('--d',((i%4)*90)+'ms')});
+  io=new IntersectionObserver(function(en){en.forEach(function(x){
+    if(!x.isIntersecting) return;
+    var e=x.target; e.classList.add('in'); io.unobserve(e);
+    var b=e.querySelector('[data-n]'); if(b) count(b);
+    setTimeout(function(){e.classList.remove('rv','in');e.style.removeProperty('--d')},1200);
+  })},{threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+  var r=['Electrical Power','Light Current Systems','Lighting Design','Site Supervision'],k=0,el=$('#rot');
+  rotT=setInterval(function(){if(!el)return;el.style.opacity=0;setTimeout(function(){k=(k+1)%r.length;el.textContent=r[k];el.style.opacity=1},350)},2600);
+}
+addEventListener('scroll',function(){
+  var p=$('#prog'),h=document.documentElement,m=h.scrollHeight-innerHeight;
+  if(p) p.style.width=(m>0?scrollY/m*100:0)+'%';
+  var hd=$('header'); if(hd) hd.classList.toggle('sc',scrollY>20);
+},{passive:true});
+function photoBlock(d){
+  var ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join(''),ok=okId(d.photo);
+  return '<div class="pf">'+(ok?'<div class="pimg2" style="background-image:url(\''+ph(d.photo)+'\')"></div>':'<div class="pimg2 ph3">'+esc(ini)+'</div>')+(isOwner?'<label class="btn sm pbtn">'+(ok?'Change photo':'Add photo')+'<input type="file" accept="image/*" hidden id="pup"></label>':'')+'</div>';
+}
+var FIELDS=[['name','Name','line'],['title','Title (top bar)','line'],['bio','About / summary','text'],['links','Contact links: one per line, Label | URL','links'],['services','What I do: one per line, Title | Description','svc'],['experience','Experience: separate jobs with a blank line. First line: Role | Company | Period, then lines starting with "- " for bullets','blocks'],['education','Education: same format as Experience','blocks'],['skills','Technical skills: one per line','list'],['certs','Certifications: one per line','list'],['languages','Languages: one per line','list'],['info','Additional information: one per line','list']];
+function toText(v,t){
+  if(t==='line'||t==='text') return v||'';
+  if(t==='list') return (v||[]).join('\n');
+  if(t==='links') return (v||[]).map(function(l){return l.label+' | '+l.url}).join('\n');
+  if(t==='svc') return (v||[]).map(function(s){return s.t+' | '+s.d}).join('\n');
+  return (v||[]).map(function(x){return [x.role+' | '+x.org+' | '+x.period].concat(x.desc?[x.desc]:[],(x.points||[]).map(function(p){return '- '+p})).join('\n')}).join('\n\n');
+}
+function lines(s){return s.split('\n').map(function(x){return x.trim()}).filter(Boolean)}
+function pair(l){var i=l.indexOf('|');return i<0?[l,'']:[l.slice(0,i).trim(),l.slice(i+1).trim()]}
+function fromText(s,t){
+  if(t==='line'||t==='text') return s.trim();
+  if(t==='list') return lines(s);
+  if(t==='links') return lines(s).map(pair).filter(function(p){return /^(https?:|mailto:|tel:)/i.test(p[1])}).map(function(p){return {label:p[0]||p[1],url:p[1]}});
+  if(t==='svc') return lines(s).map(pair).map(function(p){return {t:p[0],d:p[1]}});
+  return s.split(/\n\s*\n/).map(lines).filter(function(b){return b.length}).map(function(b){var h=b[0].split('|').map(function(x){return x.trim()}),pts=[],ds=[];b.slice(1).forEach(function(l){/^[-•]\s*/.test(l)?pts.push(l.replace(/^[-•]\s*/,'')):ds.push(l)});return {role:h[0],org:h[1]||'',period:h[2]||'',desc:ds.join(' '),points:pts}});
+}
+function openEdit(){
+  var m=document.createElement('div'); m.className='modal';
+  m.innerHTML='<div class="box big"><h3>Edit site content</h3>'+FIELDS.map(function(f,i){return '<label class="f">'+esc(f[1])+(f[2]==='line'?'<input id="e-'+i+'">':'<textarea id="e-'+i+'" rows="'+(f[2]==='blocks'?10:f[2]==='text'?5:4)+'"></textarea>')+'</label>'}).join('')+'<div class="row"><button class="btn sm navy" id="e-x">Cancel</button><button class="btn sm" id="e-s">Save and publish</button></div></div>';
+  document.body.appendChild(m);
+  FIELDS.forEach(function(f,i){m.querySelector('#e-'+i).value=toText(DATA[f[0]],f[2])});
+  m.querySelector('#e-x').onclick=function(){m.remove()};
+  m.querySelector('#e-s').onclick=function(){
+    FIELDS.forEach(function(f,i){var v=fromText(m.querySelector('#e-'+i).value,f[2]); if(f[0]==='name'&&!v) return; DATA[f[0]]=v});
+    m.remove(); save();
+  };
+}
+function clean(s){return String(s==null?'':s).replace(/[–—]/g,'-').replace(/[·•]/g,'|').replace(/[’‘]/g,"'").replace(/[“”]/g,'"')}
+async function dlCV(){
+  var J=window.jspdf,d=DATA;
+  if(!J){alert('The PDF library did not load. Check your connection and try again.');return}
+  var doc=new J.jsPDF({unit:'pt',format:'a4'}),W=doc.internal.pageSize.getWidth(),H=doc.internal.pageSize.getHeight(),M=48,y=M;
+  function tx(s,sz,st,col,ind){doc.setFont('helvetica',st||'normal');doc.setFontSize(sz);var c=col||[30,30,30];doc.setTextColor(c[0],c[1],c[2]);doc.splitTextToSize(clean(s),W-2*M-(ind||0)).forEach(function(l){if(y+sz*1.4>H-M){doc.addPage();y=M}doc.text(l,M+(ind||0),y);y+=sz*1.4})}
+  function hd(s){y+=12;if(y>H-M-40){doc.addPage();y=M}tx(s.toUpperCase(),11,'bold',[11,42,69]);doc.setDrawColor(242,169,0);doc.setLineWidth(1.5);doc.line(M,y-8,M+44,y-8);y+=2}
+  function blocks(l){l.forEach(function(x){y+=4;tx(x.role+' - '+x.org,10.5,'bold');tx(x.period,9,'normal',[90,100,110]);if(x.desc)tx(x.desc,10);(x.points||[]).forEach(function(p){tx('- '+p,10,'normal',null,10)})})}
+  tx(d.name,22,'bold',[11,42,69]);tx(d.title,11,'normal',[90,100,110]);
+  tx(d.links.map(function(l){return /^https?:/.test(l.url)?l.url:l.label}).join('   |   '),9,'normal',[90,100,110]);
+  hd('Professional Summary');tx(d.bio,10);
+  hd('Work Experience');blocks(d.experience);
+  hd('Major Projects');d.projects.forEach(function(p){y+=4;tx(p.title,10.5,'bold');tx(p.desc,10)});
+  hd('Education');blocks(d.education);
+  hd('Technical Skills');tx(d.skills.join(', '),10);
+  hd('Certifications');d.certs.forEach(function(c){tx('- '+c,10)});
+  hd('Languages');tx(d.languages.join('   |   '),10);
+  hd('Additional Information');tx(d.info.join('   |   '),10);
+  doc.save('Hosam_Maher_CV.pdf')
+}
+function lb(pi,k){
+  var p=DATA.projects[pi],im=imgs(p); if(!im.length) return;
+  k=(k+im.length)%im.length;
+  var o=$('.lightbox')||document.createElement('div'); o.className='lightbox';
+  o.innerHTML='<button class="x" data-c>✕</button><button class="nv pv" data-n="-1">‹</button><img src="'+ph(im[k])+'" alt="'+esc(p.title)+'"><button class="nv nx" data-n="1">›</button><div class="cap">'+esc(p.title)+' · '+(k+1)+'/'+im.length+(isOwner?' · <button class="del" data-rm>Remove photo</button>':'')+'</div>';
+  document.body.appendChild(o);
+  o.onclick=function(e){var t=e.target;
+    if(t===o||t.hasAttribute('data-c')) o.remove();
+    else if(t.getAttribute('data-n')) lb(pi,k+Number(t.getAttribute('data-n')));
+    else if(t.hasAttribute('data-rm')&&confirm('Remove this photo?')){p.images=p.images.filter(function(x){return x!==im[k]});o.remove();save()}};
+}
+function note(m){var t=document.createElement('div');t.className='modal';t.innerHTML='<div class="box">'+m+'</div>';document.body.appendChild(t);return t}
+async function upFiles(files){
+  if(!files||!files.length) return [];
+  var a=null; try{a=await claude.use('assets')}catch(e){}
+  if(!a){alert('Photo upload is not available in this view.');return null}
+  var t=note('Uploading photos…'),ids=[];
+  try{for(var i=0;i<files.length;i++){var r=await a.upload(files[i]);ids.push(r.id)}}
+  catch(e){alert('Upload failed. Please try again.');ids=null}
+  t.remove(); return ids;
+}
+function openModal(ix){var P=typeof ix==='number'?DATA.projects[ix]:null;
+  var m=document.createElement('div'); m.className='modal';
+  m.innerHTML='<div class="box"><h3>New project</h3><input id="f-title" placeholder="Project name"><textarea id="f-desc" rows="3" placeholder="Short description"></textarea><input id="f-tags" placeholder="Tags (comma separated)"><label class="mini">Photos (optional)<input id="f-img" type="file" accept="image/*" multiple></label><div class="row"><button class="btn sm navy" id="f-cancel">Cancel</button><button class="btn sm" id="f-save">Save and publish</button></div></div>';
+  document.body.appendChild(m);
+  m.querySelector('#f-cancel').onclick=function(){m.remove()};
+  if(P){m.querySelector('h3').textContent='Edit project';m.querySelector('#f-title').value=P.title;m.querySelector('#f-desc').value=P.desc||'';m.querySelector('#f-tags').value=(P.tags||[]).join(', ')}
+  m.querySelector('#f-save').onclick=async function(){
+    var t=m.querySelector('#f-title').value.trim(); if(!t){m.querySelector('#f-title').focus();return}
+    var ids=await upFiles(m.querySelector('#f-img').files); if(ids===null) return;
+    var tg=m.querySelector('#f-tags').value.split(/[,،]/).map(function(x){return x.trim()}).filter(Boolean);
+    if(P){P.title=t;P.desc=m.querySelector('#f-desc').value.trim();P.tags=tg;P.images=(P.images||[]).concat(ids);m.remove();save();return}
+    DATA.projects.unshift({id:'p'+Date.now(),title:t,desc:m.querySelector('#f-desc').value.trim(),
+      tags:m.querySelector('#f-tags').value.split(/[,،]/).map(function(x){return x.trim()}).filter(Boolean),images:ids});
+    m.remove(); save();
+  };
+}
+function buildHtml(){
+  var c=document.documentElement.cloneNode(true);
+  c.querySelector('#app').innerHTML='';
+  c.querySelectorAll('.modal,.lightbox').forEach(function(n){n.remove()});
+  c.querySelector('#site-data').textContent=JSON.stringify(DATA).replace(/</g,'\\u003c');
+  return '<!DOCTYPE html>\n'+c.outerHTML;
+}
+async function save(){
+  try{
+    var a=await claude.use('artifact');
+    if(!a){alert('Publishing is not available in this view. Open the page as its owner.');return}
+    await a.publish(buildHtml());
+  }catch(e){
+    if(!e||e.code!=='conflict') alert('Something went wrong while saving. Please try again.');
+  }
+}
+document.addEventListener('keydown',function(e){var o=$('.lightbox');if(o&&e.key==='Escape')o.remove()});
+setTimeout(function(){if(!window.__r){window.__r=1;render()}},4000);
+</script>
+
+
+</body></html>

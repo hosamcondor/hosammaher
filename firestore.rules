@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Replace YOUR_ADMIN_UID with the User UID of your admin account
+    // (Firebase console > Authentication > Users).
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == "YOUR_ADMIN_UID";
+    }
+    match /site/{doc}   { allow read: if true; allow write: if isAdmin(); }
+    match /photos/{doc} { allow read: if true; allow write: if isAdmin(); }
+  }
+}
