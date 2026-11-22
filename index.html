@@ -21,6 +21,7 @@ a{color:var(--link)}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--on)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--on);text-decoration:none;white-space:nowrap}
+.logo img.lg{height:38px;width:auto;max-width:150px;object-fit:contain}
 .logo b{background:var(--accent);color:#1a1400;border-radius:8px;padding:2px 9px}
 nav{display:flex;gap:22px;align-items:center;overflow-x:auto}
 nav a{color:var(--onm);text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap}
@@ -151,7 +152,7 @@ function render(){
   var ph=d.projects.reduce(function(n,p){var m=/(\d+)\s*beds/i.exec(p.desc);return n+(m?+m[1]:0)},0);
   $('#app').innerHTML=
    '<div class="top"><div class="wrap"><span>'+esc(d.title)+'</span><span><a href="'+esc(mail.url)+'">'+esc(mail.label)+'</a> &nbsp;·&nbsp; <a href="'+esc(tel.url)+'">'+esc(tel.label)+'</a></span></div></div>'
-  +'<header><div id="prog"></div><div class="wrap"><a class="logo" href="#home"><b>'+esc(ini)+'</b> '+esc(d.name.split(' ').slice(0,2).join(' '))+'</a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="btn sm" href="#contact">Contact</a></nav></div></header>'
+  +'<header><div id="prog"></div><div class="wrap"><a class="logo" href="#home">'+(okId(d.logo)&&ph(d.logo)?'<img class="lg" src="'+ph(d.logo)+'" alt="">':'<b>'+esc(ini)+'</b>')+' '+esc(d.name.split(' ').slice(0,2).join(' '))+'</a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="btn sm" href="#contact">Contact</a></nav></div></header>'
   +'<div class="hero" id="home"><div class="wrap hg"><div class="ht"><div class="eyebrow">MEP Engineer · <span id="rot">Electrical Power</span></div><h1>'+esc(d.name)+'</h1><p>'+esc(d.bio)+'</p><div class="acts"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a><button class="btn ghost" id="dlcv">⬇ Download CV</button></div></div>'+photoBlock(d)+'</div></div>'
   +'<section id="about"><div class="wrap"><h2>What I do</h2><p class="kick">Core areas of my work across healthcare, laboratory and governmental projects.</p><div class="sgrid">'
   +d.services.map(function(s,i){return '<div class="sv"><i>0'+(i+1)+'</i><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join('')+'</div></div></section>'
