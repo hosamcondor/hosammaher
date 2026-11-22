@@ -166,6 +166,7 @@ function render(){
   +'<section class="contact" id="contact"><div class="wrap"><h2>Let’s work together</h2><p>Reach out about a project or an opportunity.</p><div class="acts">'+d.links.map(function(l){return '<a class="btn navy" href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div></div></section>'
   +(isOwner?'<button class="btn fab" id="edit">✎ Edit content</button>':'')+'<footer><div class="wrap"><div><h4>'+esc(d.name)+'</h4><div>'+esc(d.title)+'</div></div><div><h4>Contact</h4>'+d.links.map(function(l){return '<a href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div><div><h4>Links</h4><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a></div><div class="cp">© '+new Date().getFullYear()+' '+esc(d.name)+'</div></div></footer>';
   var a=$('#add'); if(a) a.onclick=openModal; initAnim();
+  var lg=$('.logo img.lg'); if(lg) lg.onerror=function(){var b=document.createElement('b');b.textContent=ini;lg.replaceWith(b)};
   var ed=$('#edit'); if(ed) ed.onclick=openEdit;
   var cv=$('#dlcv'); if(cv) cv.onclick=dlCV;
   var pu=$('#pup'); if(pu) pu.onchange=async function(){var ids=await upFiles(pu.files); if(ids&&ids[0]){DATA.photo=ids[0];save()}};
