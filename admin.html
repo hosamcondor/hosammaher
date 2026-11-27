@@ -40,7 +40,7 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 const okId=i=>/^[A-Za-z0-9]{10,40}$/.test(i);
 const status=m=>{$('st').textContent=m};
 let auth,db,DATA,PH={},trash=[];
-var FIELDS=[['name','Name','line'],['title','Title (top bar)','line'],['bio','About / summary','text'],['links','Contact links: one per line, Label | URL','links'],['services','What I do: one per line, Title | Description','svc'],['experience','Experience: separate jobs with a blank line. First line: Role | Company | Period, then lines starting with "- " for bullets','blocks'],['education','Education: same format as Experience','blocks'],['skills','Technical skills: one per line','list'],['certs','Certifications: one per line','list'],['languages','Languages: one per line','list'],['info','Additional information: one per line','list']];
+var FIELDS=[['name','Name','line'],['title','Title (top bar)','line'],['tagline','Hero tagline (one sentence under your name)','line'],['bio','About / summary','text'],['links','Contact links: one per line, Label | URL','links'],['services','What I do: one per line, Title | Description','svc'],['experience','Experience: separate jobs with a blank line. First line: Role | Company | Period, then lines starting with "- " for bullets','blocks'],['education','Education: same format as Experience','blocks'],['skills','Technical skills: one per line','list'],['certs','Certifications: one per line','list'],['languages','Languages: one per line','list'],['info','Additional information: one per line','list'],['name_ar','عربي · الاسم','line'],['title_ar','عربي · العنوان (الشريط العلوي)','line'],['tagline_ar','عربي · الجملة تحت الاسم','line'],['bio_ar','عربي · نبذة','text'],['services_ar','عربي · مجالات العمل: سطر لكل خدمة، العنوان | الوصف','svc'],['experience_ar','عربي · الخبرة: نفس شكل الإنجليزي','blocks'],['education_ar','عربي · التعليم: نفس شكل الإنجليزي','blocks'],['certs_ar','عربي · الشهادات: سطر لكل شهادة','list'],['languages_ar','عربي · اللغات: سطر لكل لغة','list'],['info_ar','عربي · معلومات إضافية: سطر لكل معلومة','list']];
 function toText(v,t){
   if(t==='line'||t==='text') return v||'';
   if(t==='list') return (v||[]).join('\n');
@@ -66,19 +66,20 @@ async function loadPhotos(){
 }
 async function load(){
   const s=await getDoc(doc(db,'site','main'));
-  DATA=Object.assign(JSON.parse(JSON.stringify(window.DEFAULT_DATA)),s.exists()&&s.data().json?JSON.parse(s.data().json):{});
+  DATA=Object.assign(JSON.parse(JSON.stringify(window.DEFAULT_DATA)),s.exists()&&s.data().json?JSON.parse(s.data().json):{});(function(D){var m={};(window.DEFAULT_DATA.projects||[]).forEach(function(p){m[p.id]=p});(D.projects||[]).forEach(function(p){var q=m[p.id];if(q)['title_ar','desc_ar','tags_ar'].forEach(function(k){if(!p[k]||!p[k].length)p[k]=q[k]})})})(DATA);
   await loadPhotos();
 }
 function shrink(file,max=1200,type='image/jpeg'){return new Promise((res,rej)=>{const im=new Image(),u=URL.createObjectURL(file);
   im.onload=()=>{const iw=im.naturalWidth||400,ih=im.naturalHeight||iw,k=Math.min(1,max/Math.max(iw,ih)),c=document.createElement('canvas');let w=Math.max(1,Math.round(iw*k)),h=Math.max(1,Math.round(ih*k));c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);
-    let q=.82,d=c.toDataURL(type,q);while(type==='image/jpeg'&&d.length>900000&&q>.4){q-=.1;d=c.toDataURL(type,q)}
-    while(type==='image/png'&&d.length>150000&&w>48){w=Math.round(w*.8);h=Math.round(h*.8);c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);d=c.toDataURL(type)}
+    let q=.82,d=c.toDataURL(type,q);while((type==='image/jpeg'||d.indexOf('data:image/webp')===0)&&d.length>900000&&q>.4){q-=.1;d=c.toDataURL(type,q)}
+    const lim=type==='image/webp'?900000:150000;
+    while(d.indexOf('data:image/png')===0&&d.length>lim&&w>48){w=Math.round(w*.8);h=Math.round(h*.8);c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);d=c.toDataURL(type)}
     if(d.indexOf('data:image/')!==0){rej(new Error('bad image'));return}URL.revokeObjectURL(u);res(d)};
   im.onerror=()=>rej(new Error('bad image'));im.src=u})}
-async function upload(file,logo){const d=logo?await shrink(file,400,'image/png'):await shrink(file);const r=await addDoc(collection(db,'photos'),{data:d});PH[r.id]=d;return r.id}
+async function upload(file,logo){const d=logo===true?await shrink(file,400,'image/png'):logo==='photo'?await shrink(file,1000,'image/webp'):await shrink(file);const r=await addDoc(collection(db,'photos'),{data:d});PH[r.id]=d;return r.id}
 function collect(){
   FIELDS.forEach((f,i)=>{const el=$('f'+i);if(!el)return;const v=fromText(el.value,f[2]);if(f[0]==='name'&&!v)return;DATA[f[0]]=v});
-  DATA.projects.forEach((p,i)=>{const t=$('pt'+i);if(!t)return;p.title=t.value.trim()||'Untitled';p.desc=$('pd'+i).value.trim();p.tags=$('pg'+i).value.split(/[,،]/).map(x=>x.trim()).filter(Boolean)});
+  DATA.projects.forEach((p,i)=>{const t=$('pt'+i);if(!t)return;p.title=t.value.trim()||'Untitled';p.desc=$('pd'+i).value.trim();p.tags=$('pg'+i).value.split(/[,،]/).map(x=>x.trim()).filter(Boolean);p.title_ar=$('pta'+i).value.trim();p.desc_ar=$('pda'+i).value.trim();p.tags_ar=$('pga'+i).value.split(/[,،]/).map(x=>x.trim()).filter(Boolean)});
 }
 function draw(){
   const d=DATA;
@@ -86,9 +87,9 @@ function draw(){
   `<section><h2>Logo</h2><div class="ph"><div class="lgbox">${okId(d.logo)&&PH[d.logo]?`<img src="${PH[d.logo]}">`:'<span>No logo (initials shown)</span>'}</div><label class="btn">Choose logo<input type="file" id="logo" accept="image/*" hidden></label>${okId(d.logo)?'<button class="btn danger" id="rmlogo">Remove logo</button>':''}</div></section>`
   +`<section><h2>Profile photo</h2><div class="ph">${okId(d.photo)&&PH[d.photo]?`<img src="${PH[d.photo]}">`:'<div class="noimg">No photo</div>'}<label class="btn">Choose photo<input type="file" id="photo" accept="image/*" hidden></label></div></section>`
   +`<section><h2>Content</h2>${FIELDS.map((f,i)=>`<label class="f">${esc(f[1])}${f[2]==='line'?`<input id="f${i}" value="${esc(toText(d[f[0]],f[2]))}">`:`<textarea id="f${i}" rows="${f[2]==='blocks'?10:f[2]==='text'?5:4}">${esc(toText(d[f[0]],f[2]))}</textarea>`}</label>`).join('')}</section>`
-  +`<section><h2>Projects</h2><div><button class="btn" id="addp">＋ Add project</button></div>${d.projects.map((p,i)=>`<div class="proj"><input id="pt${i}" value="${esc(p.title)}" placeholder="Project name"><textarea id="pd${i}" rows="3" placeholder="Description">${esc(p.desc)}</textarea><input id="pg${i}" value="${esc((p.tags||[]).join(', '))}" placeholder="Tags, comma separated"><div class="th">${(p.images||[]).map((id,j)=>PH[id]?`<span><img src="${PH[id]}"><button data-rm="${i}:${j}">×</button></span>`:'').join('')}</div><div class="rw"><label class="btn sm">＋ Photos<input type="file" multiple accept="image/*" hidden data-add="${i}"></label><button class="btn sm danger" data-del="${i}">Delete project</button></div></div>`).join('')}</section>`;
+  +`<section><h2>Projects</h2><div><button class="btn" id="addp">＋ Add project</button></div>${d.projects.map((p,i)=>`<div class="proj"><input id="pt${i}" value="${esc(p.title)}" placeholder="Project name"><textarea id="pd${i}" rows="3" placeholder="Description">${esc(p.desc)}</textarea><input id="pg${i}" value="${esc((p.tags||[]).join(', '))}" placeholder="Tags, comma separated"><input id="pta${i}" dir="rtl" value="${esc(p.title_ar||'')}" placeholder="اسم المشروع بالعربي"><textarea id="pda${i}" dir="rtl" rows="3" placeholder="وصف المشروع بالعربي">${esc(p.desc_ar||'')}</textarea><input id="pga${i}" dir="rtl" value="${esc((p.tags_ar||[]).join('، '))}" placeholder="التصنيفات بالعربي، مفصولة بفاصلة"><div class="th">${(p.images||[]).map((id,j)=>PH[id]?`<span><img src="${PH[id]}"><button data-rm="${i}:${j}">×</button></span>`:'').join('')}</div><div class="rw"><label class="btn sm">＋ Photos<input type="file" multiple accept="image/*" hidden data-add="${i}"></label><button class="btn sm danger" data-del="${i}">Delete project</button></div></div>`).join('')}</section>`;
   $('photo').onchange=async e=>{const f=e.target.files[0];if(!f)return;collect();status('Uploading photo…');
-    try{const id=await upload(f);if(okId(DATA.photo))trash.push(DATA.photo);DATA.photo=id;status('Photo added. Press Save to publish.')}catch(x){status('Upload failed')}draw()};
+    try{const id=await upload(f,'photo');if(okId(DATA.photo))trash.push(DATA.photo);DATA.photo=id;status('Photo added. Press Save to publish.')}catch(x){status('Upload failed')}draw()};
   $('logo').onchange=async e=>{const f=e.target.files[0];if(!f)return;collect();status('Uploading logo…');try{const id=await upload(f,true);if(okId(DATA.logo))trash.push(DATA.logo);DATA.logo=id;status('Logo added. Press Save to publish.')}catch(x){status('Upload failed')}draw()};
   const rl=$('rmlogo');if(rl)rl.onclick=()=>{collect();if(okId(DATA.logo))trash.push(DATA.logo);DATA.logo='';draw()};
   $('addp').onclick=()=>{collect();DATA.projects.unshift({id:'p'+Date.now(),title:'New project',desc:'',tags:[],images:[]});draw()};

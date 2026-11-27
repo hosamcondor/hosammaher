@@ -8,7 +8,7 @@ async function go(){
     const db=getFirestore(initializeApp(firebaseConfig));
     const s=await getDoc(doc(db,"site","main"));
     if(s.exists()&&s.data().json){
-      window.DATA=Object.assign(JSON.parse(JSON.stringify(window.DEFAULT_DATA)),JSON.parse(s.data().json));
+      window.DATA=Object.assign(JSON.parse(JSON.stringify(window.DEFAULT_DATA)),JSON.parse(s.data().json));(function(D){var m={};(window.DEFAULT_DATA.projects||[]).forEach(function(p){m[p.id]=p});(D.projects||[]).forEach(function(p){var q=m[p.id];if(q)['title_ar','desc_ar','tags_ar'].forEach(function(k){if(!p[k]||!p[k].length)p[k]=q[k]})})})(window.DATA);
       const ids=[window.DATA.photo,window.DATA.logo].concat(...window.DATA.projects.map(p=>p.images||[])).filter(ok);
       await Promise.all([...new Set(ids)].map(async id=>{
         try{const r=await getDoc(doc(db,"photos",id));if(r.exists())window.PH[id]=r.data().data}catch(e){}

@@ -3,7 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hosam Maher — MEP Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
+<meta name="description" content="Hosam Maher, MEP electrical engineer with 8+ years in MV/LV power distribution, light current systems, lighting design, shop drawings and site supervision for hospitals, laboratories and governmental projects in Egypt.">
+<link rel="canonical" href="https://hosamcondor.github.io/hosammaher/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hosamcondor.github.io/hosammaher/">
+<meta property="og:title" content="Hosam Maher | MEP Electrical Engineer">
+<meta property="og:description" content="Power distribution, light current, lighting design and site supervision for hospitals, labs and governmental buildings. Available for projects and roles.">
+<meta name="twitter:card" content="summary">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f3f5f8;--surface:#fff;--text:#14212e;--muted:#5d6b7a;--line:#dde3ea;--navy:#0b2a45;--navy2:#103a5e;--accent:#f2a900;--link:#0b5a9c;--on:#fff;--onm:#b8c6d4;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -94,10 +101,16 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-t
 .lightbox .del{color:#fca5a5}
 .hg{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
 .pf{position:relative;justify-self:center;width:min(340px,80vw);animation:up 1s .3s both}
-.pimg2{aspect-ratio:4/5;border-radius:18px;background-size:cover;background-position:center;border:4px solid var(--accent);box-shadow:16px 16px 0 rgba(242,169,0,.28)}
-.ph3{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy2),var(--navy));color:var(--accent);font-size:5rem;font-weight:800}
-.pbtn{position:absolute;bottom:14px;inset-inline-start:14px;cursor:pointer}
-@media (max-width:820px){.hg{grid-template-columns:1fr}.pf{order:-1;width:min(240px,70vw)}}
+.hero{padding-bottom:0}
+.hg{align-items:stretch}
+.ht{align-self:center;padding-bottom:110px}
+.pf{align-self:end;justify-self:end;width:min(440px,100%);position:relative;animation:up 1s .3s both}
+.pf::before{content:"";position:absolute;left:8%;right:8%;bottom:0;height:62%;background:radial-gradient(closest-side,rgba(242,169,0,.22),transparent 72%);z-index:0;pointer-events:none}
+.pimg2{position:relative;z-index:1;aspect-ratio:4/5;background-size:contain;background-repeat:no-repeat;background-position:center bottom;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.ph3 svg{position:absolute;inset:auto 0 0 0;width:100%;height:auto;opacity:.9}
+.ph3{display:block}
+.pbtn{position:absolute;z-index:2;bottom:14px;inset-inline-start:14px;cursor:pointer}
+@media (max-width:820px){.hg{grid-template-columns:1fr;gap:10px}.ht{padding-bottom:0}.pf{justify-self:center;width:min(320px,82vw)}}
 .fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .big{max-width:720px;max-height:88vh;overflow:auto}
 .box label.f{font-weight:600;font-size:.85rem;color:var(--muted)}
@@ -125,6 +138,21 @@ nav a:not(.btn){position:relative}nav a:not(.btn)::after{content:"";position:abs
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease var(--d,0ms),transform .7s ease var(--d,0ms)}.rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<style>
+html[dir=rtl] body{font-family:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif}
+html[dir=rtl] .eyebrow{letter-spacing:0}
+html[dir=rtl] .hero h1{line-height:1.25}
+.lng{flex:none;background:transparent;border:1.5px solid var(--onm);color:var(--on);border-radius:6px;padding:5px 12px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer;white-space:nowrap}
+.lng:hover{border-color:var(--accent);color:var(--accent)}
+.about{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:-14px 0 34px}
+.about p{margin:0;max-width:75ch;color:var(--muted);font-size:1.02rem}
+.pimg.ph{background:var(--navy);flex-direction:column;gap:8px}
+.pimg.ph svg{width:78%;height:auto;max-height:70%}
+.pimg.ph small{color:var(--onm);font-size:.8rem;font-weight:600;letter-spacing:.04em}
+.ltr{direction:ltr;unicode-bidi:isolate}
+header nav{flex:1;min-width:0;justify-content:flex-end}
+@media (max-width:600px){header .wrap{gap:10px}.logo{font-size:.95rem}}
+</style>
 <style>artifact-sync,artifact-local{display:contents}</style></head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -134,6 +162,15 @@ nav a:not(.btn){position:relative}nav a:not(.btn)::after{content:"";position:abs
 <script>
 var DATA=JSON.parse(JSON.stringify(window.DEFAULT_DATA)),isOwner=false,PH={};function ph(i){return PH[i]||''}
 function $(s){return document.querySelector(s)}
+var LANG='en';try{var _l=localStorage.getItem('hm-lang');if(_l==='ar'||_l==='en')LANG=_l}catch(e){}
+var U={en:{about:'About',exp:'Experience',proj:'Projects',skills:'Skills',contact:'Contact',sw:'العربية',eb:'MEP Engineer',rot:['Electrical Power','Light Current Systems','Lighting Design','Site Supervision'],view:'View projects',touch:'Get in touch',cv:'⬇ Download CV',what:'What I do',whatk:'Core areas of my work across healthcare, laboratory and governmental projects.',yrs:'Years of experience',mp:'Major projects',beds:'Hospital beds across projects',major:'Major Projects',majork:'Selected work with Massoud Consulting Group (MCG).',none:'No projects yet.',expk:'Career path so far.',edu:'Education',certs:'Certifications',langs:'Languages',info:'Additional Information',tech:'Technical Skills',lets:'Let’s work together',letsk:'Reach out about a project or an opportunity.',links:'Links',photos:' photos',nophoto:'Photos coming soon'},
+ar:{about:'نبذة',exp:'الخبرة',proj:'المشاريع',skills:'المهارات',contact:'تواصل',sw:'English',eb:'مهندس MEP',rot:['توزيع القوى','التيار الخفيف','تصميم الإنارة','الإشراف على التنفيذ'],view:'شوف المشاريع',touch:'تواصل معايا',cv:'⬇ تحميل السيرة الذاتية',what:'مجالات عملي',whatk:'المجالات الأساسية لشغلي في المشاريع الصحية والمعملية والحكومية.',yrs:'سنين خبرة',mp:'مشاريع كبرى',beds:'سرير مستشفى في المشاريع',major:'أهم المشاريع',majork:'مشاريع مختارة مع مجموعة مسعود الاستشارية (MCG).',none:'لا توجد مشاريع بعد.',expk:'المسار المهني.',edu:'التعليم',certs:'الشهادات',langs:'اللغات',info:'معلومات إضافية',tech:'المهارات الفنية',lets:'خلّينا نشتغل سوا',letsk:'تواصل معايا بخصوص مشروع أو فرصة عمل.',links:'روابط',photos:' صور',nophoto:'الصور قريبًا'}};
+function u(k){return U[LANG][k]}
+function A(k){if(LANG==='ar'){var v=DATA[k+'_ar'];if(v&&v.length)return v}return DATA[k]}
+function PA(p,k){if(LANG==='ar'){var v=p[k+'_ar'];if(v&&v.length)return v}return p[k]}
+function applyLang(){var h=document.documentElement;h.lang=LANG;h.dir=LANG==='ar'?'rtl':'ltr';document.title=LANG==='ar'?(A('name')+' — مهندس MEP'):(DATA.name+' — MEP Engineer')}
+function setLang(l){LANG=l;try{localStorage.setItem('hm-lang',l)}catch(e){}applyLang();render()}
+var BLD='<svg viewBox="0 0 200 110" aria-hidden="true"><g fill="none" stroke="#f2a900" stroke-width="1.6"><path d="M4 104H196"/><rect x="18" y="38" width="62" height="66"/><rect x="86" y="18" width="44" height="86"/><rect x="136" y="56" width="50" height="48"/><path d="M18 60H80M18 82H80M86 40H130M86 62H130M86 84H130M136 76H186"/><path d="M40 104V92H58V104M100 104V94H116V104"/></g><g fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"><path d="M30 8V18M30 8H70M108 4V18"/></g></svg>';
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function okId(i){return /^[A-Za-z0-9]{10,40}$/.test(i)}
 function imgs(p){return (p.images||[]).filter(okId)}
@@ -142,29 +179,32 @@ function chips(l){return '<div class="chips">'+(l||[]).map(function(s){return '<
 function tl(list){return '<div class="tl">'+list.map(function(x){return '<div class="tli"><div class="meta">'+esc(x.period)+'</div><h3>'+esc(x.role)+'</h3><div class="org">'+esc(x.org)+'</div>'+(x.desc?'<p>'+esc(x.desc)+'</p>':'')+(x.points&&x.points.length?'<ul>'+x.points.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div>'}
 function card(p,i){
   var im=imgs(p);
-  var cover=im.length?'<div class="pimg" data-open="'+i+'" style="background-image:url(\''+ph(im[0])+'\')">'+(im.length>1?'<span class="count">'+im.length+' photos</span>':'')+'</div>':'<div class="pimg ph">'+esc(p.title.charAt(0))+'</div>';
-  return '<div class="card">'+cover+'<div class="cb">'+chips(p.tags)+'<h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p>'
+  var cover=im.length?'<div class="pimg" data-open="'+i+'" style="background-image:url(\''+ph(im[0])+'\')">'+(im.length>1?'<span class="count">'+im.length+u('photos')+'</span>':'')+'</div>':'<div class="pimg ph">'+BLD+'<small>'+esc(u('nophoto'))+'</small></div>';
+  return '<div class="card">'+cover+'<div class="cb">'+chips(PA(p,'tags'))+'<h3>'+esc(PA(p,'title'))+'</h3><p>'+esc(PA(p,'desc'))+'</p>'
     +(isOwner?'<div class="acts2"><label class="mini">＋ Photos<input type="file" accept="image/*" multiple hidden data-up="'+i+'"></label><button class="del" data-edit="'+i+'">Edit</button><button class="del" data-del="'+i+'">Delete project</button></div>':'')+'</div></div>';
 }
 function render(){
-  var d=DATA,mail=lk('mailto:'),tel=lk('tel:'),ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join('');
-  var links=d.links.map(function(l){return '<a class="btn ghost" href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('');
+  applyLang();
+  var d=DATA,mail=lk('mailto:'),tel=lk('tel:'),ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join(''),nm=A('name');
   var beds=d.projects.reduce(function(n,p){var m=/(\d+)\s*beds/i.exec(p.desc);return n+(m?+m[1]:0)},0);
+  var nav='<a href="#about">'+u('about')+'</a><a href="#experience">'+u('exp')+'</a><a href="#projects">'+u('proj')+'</a><a href="#skills">'+u('skills')+'</a>';
+  var lnk=function(cls){return d.links.map(function(l){return '<a class="'+cls+'" href="'+esc(l.url)+'"><span class="ltr">'+esc(l.label)+'</span></a>'}).join('')};
   $('#app').innerHTML=
-   '<div class="top"><div class="wrap"><span>'+esc(d.title)+'</span><span><a href="'+esc(mail.url)+'">'+esc(mail.label)+'</a> &nbsp;·&nbsp; <a href="'+esc(tel.url)+'">'+esc(tel.label)+'</a></span></div></div>'
-  +'<header><div id="prog"></div><div class="wrap"><a class="logo" href="#home">'+(okId(d.logo)&&ph(d.logo)?'<img class="lg" src="'+ph(d.logo)+'" alt="">':'<b>'+esc(ini)+'</b>')+' '+esc(d.name.split(' ').slice(0,2).join(' '))+'</a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="btn sm" href="#contact">Contact</a></nav></div></header>'
-  +'<div class="hero" id="home"><div class="wrap hg"><div class="ht"><div class="eyebrow">MEP Engineer · <span id="rot">Electrical Power</span></div><h1>'+esc(d.name)+'</h1><p>'+esc(d.bio)+'</p><div class="acts"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a><button class="btn ghost" id="dlcv">⬇ Download CV</button></div></div>'+photoBlock(d)+'</div></div>'
-  +'<section id="about"><div class="wrap"><h2>What I do</h2><p class="kick">Core areas of my work across healthcare, laboratory and governmental projects.</p><div class="sgrid">'
-  +d.services.map(function(s,i){return '<div class="sv"><i>0'+(i+1)+'</i><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join('')+'</div></div></section>'
-  +'<div class="stats"><div class="wrap"><div><b data-n="8" data-s="+">8+</b><span>Years of experience</span></div><div><b data-n="'+d.projects.length+'">'+d.projects.length+'</b><span>Major projects</span></div>'+(beds?'<div><b data-n="'+beds+'">'+beds+'</b><span>Hospital beds across projects</span></div>':'')+'</div></div>'
-  +'<section id="projects"><div class="wrap"><h2>Major Projects</h2><p class="kick">Selected work with Massoud Consulting Group (MCG).</p>'
+   '<div class="top"><div class="wrap"><span>'+esc(A('title'))+'</span><span class="ltr"><a href="'+esc(mail.url)+'">'+esc(mail.label)+'</a> &nbsp;·&nbsp; <a href="'+esc(tel.url)+'">'+esc(tel.label)+'</a></span></div></div>'
+  +'<header><div id="prog"></div><div class="wrap"><a class="logo" href="#home">'+(okId(d.logo)&&ph(d.logo)?'<img class="lg" src="'+ph(d.logo)+'" alt="">':'<b>'+esc(ini)+'</b>')+' '+esc(nm.split(' ').slice(0,2).join(' '))+'</a><nav>'+nav+'<a class="btn sm" href="#contact">'+u('contact')+'</a></nav><button class="lng" id="lng" type="button" lang="'+(LANG==='ar'?'en':'ar')+'">'+u('sw')+'</button></div></header>'
+  +'<div class="hero" id="home"><div class="wrap hg"><div class="ht"><div class="eyebrow">'+u('eb')+' · <span id="rot">'+esc(u('rot')[0])+'</span></div><h1>'+esc(nm)+'</h1><p>'+esc(A('tagline')||A('bio'))+'</p><div class="acts"><a class="btn" href="#projects">'+u('view')+'</a><a class="btn ghost" href="#contact">'+u('touch')+'</a><button class="btn ghost" id="dlcv">'+u('cv')+'</button></div></div>'+photoBlock(d)+'</div></div>'
+  +'<section id="about"><div class="wrap"><h2>'+u('what')+'</h2><p class="kick">'+u('whatk')+'</p>'+(A('tagline')?'<div class="about"><p>'+esc(A('bio'))+'</p></div>':'')+'<div class="sgrid">'
+  +A('services').map(function(s,i){return '<div class="sv"><i>0'+(i+1)+'</i><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join('')+'</div></div></section>'
+  +'<div class="stats"><div class="wrap"><div><b data-n="8" data-s="+">8+</b><span>'+u('yrs')+'</span></div><div><b data-n="'+d.projects.length+'">'+d.projects.length+'</b><span>'+u('mp')+'</span></div>'+(beds?'<div><b data-n="'+beds+'">'+beds+'</b><span>'+u('beds')+'</span></div>':'')+'</div></div>'
+  +'<section id="projects"><div class="wrap"><h2>'+u('major')+'</h2><p class="kick">'+u('majork')+'</p>'
   +(isOwner?'<p><button class="btn navy" id="add">＋ Add project</button></p>':'')
-  +(d.projects.length?'<div class="grid">'+d.projects.map(card).join('')+'</div>':'<p class="empty">No projects yet.</p>')+'</div></section>'
-  +'<section id="experience" class="alt"><div class="wrap"><h2>Experience</h2><p class="kick">Career path so far.</p>'+tl(d.experience)+'</div></section>'
-  +'<section id="skills"><div class="wrap two"><div><h2>Education</h2><p class="kick"></p>'+tl(d.education)+'<h3 class="sub">Certifications</h3>'+chips(d.certs)+'<h3 class="sub">Languages</h3>'+chips(d.languages)+'<h3 class="sub">Additional Information</h3>'+chips(d.info)+'</div>'
-  +'<div><h2>Technical Skills</h2><p class="kick"></p>'+chips(d.skills)+'</div></div></section>'
-  +'<section class="contact" id="contact"><div class="wrap"><h2>Let’s work together</h2><p>Reach out about a project or an opportunity.</p><div class="acts">'+d.links.map(function(l){return '<a class="btn navy" href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div></div></section>'
-  +(isOwner?'<button class="btn fab" id="edit">✎ Edit content</button>':'')+'<footer><div class="wrap"><div><h4>'+esc(d.name)+'</h4><div>'+esc(d.title)+'</div></div><div><h4>Contact</h4>'+d.links.map(function(l){return '<a href="'+esc(l.url)+'">'+esc(l.label)+'</a>'}).join('')+'</div><div><h4>Links</h4><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a></div><div class="cp">© '+new Date().getFullYear()+' '+esc(d.name)+'</div></div></footer>';
+  +(d.projects.length?'<div class="grid">'+d.projects.map(card).join('')+'</div>':'<p class="empty">'+u('none')+'</p>')+'</div></section>'
+  +'<section id="experience" class="alt"><div class="wrap"><h2>'+u('exp')+'</h2><p class="kick">'+u('expk')+'</p>'+tl(A('experience'))+'</div></section>'
+  +'<section id="skills"><div class="wrap two"><div><h2>'+u('edu')+'</h2><p class="kick"></p>'+tl(A('education'))+'<h3 class="sub">'+u('certs')+'</h3>'+chips(A('certs'))+'<h3 class="sub">'+u('langs')+'</h3>'+chips(A('languages'))+'<h3 class="sub">'+u('info')+'</h3>'+chips(A('info'))+'</div>'
+  +'<div><h2>'+u('tech')+'</h2><p class="kick"></p>'+chips(d.skills)+'</div></div></section>'
+  +'<section class="contact" id="contact"><div class="wrap"><h2>'+u('lets')+'</h2><p>'+u('letsk')+'</p><div class="acts">'+lnk('btn navy')+'</div></div></section>'
+  +(isOwner?'<button class="btn fab" id="edit">✎ Edit content</button>':'')+'<footer><div class="wrap"><div><h4>'+esc(nm)+'</h4><div>'+esc(A('title'))+'</div></div><div><h4>'+u('contact')+'</h4>'+lnk('')+'</div><div><h4>'+u('links')+'</h4>'+nav+'</div><div class="cp">© '+new Date().getFullYear()+' '+esc(nm)+'</div></div></footer>';
+  var lg2=$('#lng'); if(lg2) lg2.onclick=function(){setLang(LANG==='ar'?'en':'ar')};
   var a=$('#add'); if(a) a.onclick=openModal; initAnim();
   var lg=$('.logo img.lg'); if(lg) lg.onerror=function(){var b=document.createElement('b');b.textContent=ini;lg.replaceWith(b)};
   var ed=$('#edit'); if(ed) ed.onclick=openEdit;
@@ -193,7 +233,7 @@ function initAnim(){
     setTimeout(function(){e.classList.remove('rv','in');e.style.removeProperty('--d')},1200);
   })},{threshold:.15});
   els.forEach(function(e){io.observe(e)});
-  var r=['Electrical Power','Light Current Systems','Lighting Design','Site Supervision'],k=0,el=$('#rot');
+  var r=u('rot'),k=0,el=$('#rot');
   rotT=setInterval(function(){if(!el)return;el.style.opacity=0;setTimeout(function(){k=(k+1)%r.length;el.textContent=r[k];el.style.opacity=1},350)},2600);
 }
 addEventListener('scroll',function(){
@@ -202,8 +242,8 @@ addEventListener('scroll',function(){
   var hd=$('header'); if(hd) hd.classList.toggle('sc',scrollY>20);
 },{passive:true});
 function photoBlock(d){
-  var ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join(''),ok=okId(d.photo);
-  return '<div class="pf">'+(ok?'<div class="pimg2" style="background-image:url(\''+ph(d.photo)+'\')"></div>':'<div class="pimg2 ph3">'+esc(ini)+'</div>')+(isOwner?'<label class="btn sm pbtn">'+(ok?'Change photo':'Add photo')+'<input type="file" accept="image/*" hidden id="pup"></label>':'')+'</div>';
+  var ini=d.name.split(' ').slice(0,2).map(function(w){return w.charAt(0)}).join(''),ok=okId(d.photo)&&!!ph(d.photo),src=ok?ph(d.photo):(d.photoUrl||''),ok2=!!src;
+  return '<div class="pf">'+(ok2?'<div class="pimg2" role="img" aria-label="'+esc(A('name'))+'" style="background-image:url(\''+esc(src)+'\')"></div>':'<div class="pimg2 ph3"><svg viewBox="0 0 200 250" aria-hidden="true"><circle cx="100" cy="88" r="44" fill="#1d4a72"/><path d="M22 250C22 178 58 148 100 148S178 178 178 250Z" fill="#1d4a72"/></svg></div>')+(isOwner?'<label class="btn sm pbtn">'+(ok?'Change photo':'Add photo')+'<input type="file" accept="image/*" hidden id="pup"></label>':'')+'</div>';
 }
 var FIELDS=[['name','Name','line'],['title','Title (top bar)','line'],['bio','About / summary','text'],['links','Contact links: one per line, Label | URL','links'],['services','What I do: one per line, Title | Description','svc'],['experience','Experience: separate jobs with a blank line. First line: Role | Company | Period, then lines starting with "- " for bullets','blocks'],['education','Education: same format as Experience','blocks'],['skills','Technical skills: one per line','list'],['certs','Certifications: one per line','list'],['languages','Languages: one per line','list'],['info','Additional information: one per line','list']];
 function toText(v,t){
